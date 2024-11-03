@@ -24,6 +24,7 @@ $ s3cmd ls s3://0l-fyi-data-01/
 ```
 
 ### Directory Layout
+#### V5
 
 ```
 $ s3cmd ls s3://0l-fyi-data-01-v5/parquets/ | head
@@ -69,6 +70,62 @@ $ s3cmd ls s3://0l-fyi-data-01-v5/transactions/ | head
 ```
 $ s3cmd ls s3://0l-fyi-data-01-v5/transactions/ | wc -l
 1417
+```
+#### V6
+```
+$ s3cmd ls s3://0l-fyi-data-01-v6
+                          DIR  s3://0l-fyi-data-01-v6/parquets/
+                          DIR  s3://0l-fyi-data-01-v6/transactions/
+```
+```
+$ s3cmd ls s3://0l-fyi-data-01-v6/parquets/ | head
+                          DIR  s3://0l-fyi-data-01-v6/parquets/0-9900/
+                          DIR  s3://0l-fyi-data-01-v6/parquets/10000-19900/
+                          DIR  s3://0l-fyi-data-01-v6/parquets/100000-109900/
+                          DIR  s3://0l-fyi-data-01-v6/parquets/1000000-1009900/
+                          DIR  s3://0l-fyi-data-01-v6/parquets/10000000-10009900/
+                          DIR  s3://0l-fyi-data-01-v6/parquets/10010000-10019900/
+                          DIR  s3://0l-fyi-data-01-v6/parquets/10020000-10029900/
+                          DIR  s3://0l-fyi-data-01-v6/parquets/10030000-10039900/
+                          DIR  s3://0l-fyi-data-01-v6/parquets/10040000-10049900/
+                          DIR  s3://0l-fyi-data-01-v6/parquets/10050000-10059900/
+```
+```
+$ s3cmd ls s3://0l-fyi-data-01-v6/parquets/10010000-10019900/
+2024-08-24 14:45       867650  s3://0l-fyi-data-01-v6/parquets/10010000-10019900/block_metadata_transaction.parquet.tar.gz
+2024-08-24 14:45         3347  s3://0l-fyi-data-01-v6/parquets/10010000-10019900/coin_balance.parquet.tar.gz
+2024-08-24 14:45       357237  s3://0l-fyi-data-01-v6/parquets/10010000-10019900/event.parquet.tar.gz
+2024-08-24 14:45         1538  s3://0l-fyi-data-01-v6/parquets/10010000-10019900/slow_wallet.parquet.tar.gz
+2024-08-24 14:45       524252  s3://0l-fyi-data-01-v6/parquets/10010000-10019900/state_checkpoint_transaction.parquet.tar.gz
+2024-08-24 14:45          860  s3://0l-fyi-data-01-v6/parquets/10010000-10019900/total_supply.parquet.tar.gz
+2024-08-24 14:45       106030  s3://0l-fyi-data-01-v6/parquets/10010000-10019900/user_transaction.parquet.tar.gz
+```
+#### V7
+```
+$ s3cmd ls s3://0l-fyi-data-01/parquets/ | head
+2024-09-04 13:38      5604050  s3://0l-fyi-data-01/parquets/0-9900.tar.gz
+2024-09-04 13:38      1768895  s3://0l-fyi-data-01/parquets/10000-19900.tar.gz
+2024-09-04 13:38      1766397  s3://0l-fyi-data-01/parquets/100000-109900.tar.gz
+2024-09-04 13:38      1768153  s3://0l-fyi-data-01/parquets/1000000-1009900.tar.gz
+2024-09-04 13:38      1787490  s3://0l-fyi-data-01/parquets/10000000-10009900.tar.gz
+2024-09-04 13:38      1785162  s3://0l-fyi-data-01/parquets/10010000-10019900.tar.gz
+2024-09-04 13:38      1787845  s3://0l-fyi-data-01/parquets/10020000-10029900.tar.gz
+2024-09-04 13:38      1788267  s3://0l-fyi-data-01/parquets/10030000-10039900.tar.gz
+2024-09-04 13:38      1788081  s3://0l-fyi-data-01/parquets/10040000-10049900.tar.gz
+2024-09-04 13:38      1787984  s3://0l-fyi-data-01/parquets/10050000-10059900.tar.gz
+```
+```
+$ s3cmd ls s3://0l-fyi-data-01/transactions/ | head
+2024-08-24 10:30     27839983  s3://0l-fyi-data-01/transactions/0-9900.tgz
+2024-08-24 10:30      2366919  s3://0l-fyi-data-01/transactions/10000-19900.tgz
+2024-08-24 10:30      2649689  s3://0l-fyi-data-01/transactions/100000-109900.tgz
+2024-08-24 10:30      2479753  s3://0l-fyi-data-01/transactions/1000000-1009900.tgz
+2024-08-24 10:30      2526967  s3://0l-fyi-data-01/transactions/10000000-10009900.tgz
+2024-08-24 10:30      2519739  s3://0l-fyi-data-01/transactions/10010000-10019900.tgz
+2024-08-24 10:30      2542199  s3://0l-fyi-data-01/transactions/10020000-10029900.tgz
+2024-08-24 10:30      2539767  s3://0l-fyi-data-01/transactions/10030000-10039900.tgz
+2024-08-24 10:30      2511337  s3://0l-fyi-data-01/transactions/10040000-10049900.tgz
+2024-08-24 10:30      2543799  s3://0l-fyi-data-01/transactions/10050000-10059900.tgz
 ```
 ## File Formats
 
