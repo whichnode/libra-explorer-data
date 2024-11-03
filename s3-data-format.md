@@ -132,7 +132,9 @@ $ s3cmd ls s3://0l-fyi-data-01/transactions/ | head
 ### Parquet Files
 
 Stored as compressed tar containing one .parquet file which
-can be decoded with [pqrs](https://github.com/manojkarthick/pqrs):
+can be decoded with [pqrs](https://github.com/manojkarthick/pqrs).
+
+#### V5
 
 ```
 $ s3cmd get s3://0l-fyi-data-01-v5/parquets/68100000-68199900/new_block.parquet.tar.gz
@@ -147,6 +149,31 @@ File: out/68100000-68199900/new_block.parquet
 {version: 68100001, timestamp_usecs: 1663139714417004, round: 119274, proposer: [226, 100, 2, 51, 66, 180, 26, 204, 219, 182, 26, 25, 11, 108, 178, 167], proposed_time: 1663139714417004, gas_used: 100000000}
 {version: 68100002, timestamp_usecs: 1663139714831376, round: 119275, proposer: [217, 110, 137, 226, 112, 165, 39, 61, 148, 188, 138, 183, 149, 55, 84, 249], proposed_time: 1663139714831376, gas_used: 100000000}
 {version: 68100003, timestamp_usecs: 1663139715234628, round: 119276, proposer: [153, 9, 246, 237, 178, 160, 104, 74, 222, 205, 123, 68, 139, 152, 158, 79], proposed_time: 1663139715234628, gas_used: 100000000}
+```
+
+Schema for the parquet files is [here](https://github.com/0LNetworkCommunity/explorer/blob/main/api/olfyiv5-tables.sql#L310).
+
+#### V6
+
+Schema for the parquet files is [here](https://github.com/0LNetworkCommunity/explorer/blob/main/api/olfyiv5-tables.sql#L4).
+
+#### V7
+
+Parquet files are now bundled into a single compressed tar file:
+
+```
+$ s3cmd get s3://0l-fyi-data-01/parquets/10000000-10009900.tar.gz
+$ tar zxvf 10000000-10009900.tar.gz
+ancestry.parquet
+block_metadata_transaction.parquet
+burn_tracker.parquet
+coin_balance.parquet
+epoch_fee_maker_registry.parquet
+event.parquet
+slow_wallet.parquet
+state_checkpoint_transaction.parquet
+total_supply.parquet
+user_transaction.parquet
 ```
 
 ### Trancactions Files
